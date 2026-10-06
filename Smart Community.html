@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Community</title>
+<style>
+:root{--bg:#f4f7f6;--card:#fff;--tx:#1b2a2f;--mu:#5d6f75;--bd:#dde6e4;--pr:#0f766e;--prt:#fff;--ac:#e8f3f1;--red:#c0392b;--amb:#d98e04;--blu:#2563eb;--grn:#2e8b57;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10181a;--card:#182326;--tx:#e6efee;--mu:#9bb0b3;--bd:#2a393c;--pr:#2dd4bf;--prt:#06201d;--ac:#1d3033}}
+:root[data-theme="dark"]{--bg:#10181a;--card:#182326;--tx:#e6efee;--mu:#9bb0b3;--bd:#2a393c;--pr:#2dd4bf;--prt:#06201d;--ac:#1d3033}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--bd)}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;gap:8px;padding:10px 16px;flex-wrap:wrap}
+.logo{font-weight:700;color:var(--pr);margin-right:auto;font-size:18px}
+.nav a{color:var(--tx);text-decoration:none;padding:6px 10px;border-radius:8px;font-size:14px}
+.nav a:hover{background:var(--ac)}
+.btn{display:inline-block;border:0;background:var(--pr);color:var(--prt)!important;padding:10px 16px;border-radius:10px;font:600 14px inherit;font-family:inherit;cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--pr)!important;border:1.5px solid var(--pr)}
+.btn.s{padding:5px 10px;font-size:12px}
+main{max-width:1100px;margin:auto;padding:16px}
+section{margin:28px 0}h2{font-size:21px;margin:0 0 12px}h3{margin:0 0 8px;font-size:16px}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.mu{color:var(--mu);font-size:14px}
+.hero{background:var(--pr);color:var(--prt);border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.hero h1{margin:0;font-size:26px}.hero p{margin:4px 0 0;opacity:.9}
+.big{font-size:34px;font-weight:700}
+.quick a{display:block;text-align:center;text-decoration:none;color:var(--tx);font-weight:600;font-size:14px}
+.quick .ic{font-size:26px;display:block}
+.quick .card:hover{border-color:var(--pr)}
+.alert{background:#fff4d6;color:#6b4a00;border-radius:8px;padding:8px 10px;font-size:14px;margin-top:8px}
+.fc{display:flex;gap:8px;margin-top:8px}.fc div{flex:1;text-align:center;background:var(--ac);border-radius:8px;padding:6px;font-size:13px}
+.ann{padding:10px 0;border-bottom:1px solid var(--bd)}.ann:last-child{border:0}
+.tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--ac);color:var(--pr);margin-right:6px}
+label{display:block;font-size:14px;font-weight:600;margin:10px 0 4px}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.ok{background:#dcf5e6;color:#14532d;border-radius:8px;padding:10px;margin-top:10px;font-size:14px;display:none}
+.em{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--bd)}.em:last-child{border:0}
+.step{display:flex;gap:4px;margin-top:8px}.step span{flex:1;text-align:center;font-size:11px;padding:4px 2px;border-radius:6px;background:var(--ac);color:var(--mu)}
+.step span.on{background:var(--pr);color:var(--prt);font-weight:700}
+.iss{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.mapbox{overflow-x:auto}
+.leg{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;margin-top:8px}.leg i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px}
+.goals{display:flex;flex-wrap:wrap;gap:8px}.goals span{background:var(--ac);color:var(--pr);padding:6px 12px;border-radius:99px;font-size:14px;font-weight:600}
+.stat{text-align:center}.stat b{font-size:30px;display:block}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:24px 16px}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<span class="logo">🏙️ Smart Community</span>
+<a href="#home">Home</a><a href="#services">Services</a><a href="#report">Report Issue</a><a href="#map">Map</a><a href="#complaints">Complaints</a>
+<a class="btn" href="#report">Report a Problem</a>
+</div></header>
+<main>
+<section id="home" style="margin-top:8px">
+<div class="hero"><div><h1>Green Valley Residency</h1><p>📍 Whitefield, Bengaluru · Community Dashboard</p></div>
+<div style="text-align:right"><div class="big">27°C</div><div>⛅ Partly cloudy</div></div></div>
+<div class="grid g4" style="margin-top:14px">
+<div class="card stat"><b id="activeN">0</b><span class="mu">Active issues</span></div>
+<div class="card quick"><a href="#report"><span class="ic">📝</span>Report a Problem</a></div>
+<div class="card quick"><a href="#services"><span class="ic">🚑</span>Emergency Services</a></div>
+<div class="card quick"><a href="#map"><span class="ic">🗺️</span>Community Map</a></div>
+<div class="card quick"><a href="#complaints"><span class="ic">📋</span>Complaints</a></div>
+</div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>🌦️ Weather</h3><div class="mu">Humidity 68% · Wind 12 km/h</div>
+<div class="fc"><div>Wed<br>⛅ 28°</div><div>Thu<br>🌧️ 24°</div><div>Fri<br>🌧️ 23°</div><div>Sat<br>☀️ 29°</div></div>
+<div class="alert">⚠️ Rain alert: heavy showers expected Thursday evening. Watch for waterlogging.</div></div>
+<div class="card"><h3>📢 Announcements</h3><div id="annHome"></div></div>
+</div>
+</section>
+
+<section id="services"><h2>Services</h2>
+<div class="grid g2"><div class="card"><h3>🚑 Emergency Services (sample data)</h3>
+<div class="em"><div><b>City General Hospital</b><div class="mu">1.2 km · 24x7 emergency</div></div><div><a class="btn s" href="tel:108">Call</a> <a class="btn o s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/hospital+near+me">Directions</a></div></div>
+<div class="em"><div><b>Whitefield Police Station</b><div class="mu">0.8 km</div></div><div><a class="btn s" href="tel:100">Call</a> <a class="btn o s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/police+station+near+me">Directions</a></div></div>
+<div class="em"><div><b>Fire Station</b><div class="mu">2.0 km</div></div><div><a class="btn s" href="tel:101">Call</a> <a class="btn o s" target="_blank" rel="noopener" href="https://www.google.com/maps/search/fire+station+near+me">Directions</a></div></div></div>
+<div class="card"><h3>📞 Emergency Numbers</h3>
+<div class="em"><span>Police</span><a class="btn s" href="tel:100">100</a></div>
+<div class="em"><span>Fire</span><a class="btn s" href="tel:101">101</a></div>
+<div class="em"><span>Ambulance</span><a class="btn s" href="tel:108">108</a></div>
+<div class="em"><span>Women Helpline</span><a class="btn s" href="tel:1091">1091</a></div></div></div>
+<div class="card" style="margin-top:14px"><h3>📢 Community Announcements</h3><div id="annAll"></div></div>
+</section>
+
+<section id="report"><h2>Report Issue</h2>
+<div class="grid g2">
+<div class="card"><h3>Report a Civic Problem</h3>
+<form id="f1" onsubmit="return false">
+<label>Category</label><select id="c1"><option>Pothole / damaged road</option><option>Broken streetlight</option><option>Garbage</option><option>Waterlogging</option><option>Drainage problem</option><option>Other</option></select>
+<label>Description</label><textarea id="d1" rows="3" placeholder="Describe the problem"></textarea>
+<label>Location</label><select id="l1"></select>
+<label>Photo (optional)</label><input type="file" accept="image/*">
+<p><button class="btn" id="b1" type="button">Submit Report</button></p></form>
+<div class="ok" id="ok1"></div></div>
+<div class="card"><h3>🏛️ Municipality Complaint Box</h3>
+<form id="f2" onsubmit="return false">
+<label>Complaint title</label><input id="t2" placeholder="e.g. Water supply irregular">
+<label>Category</label><select id="c2"><option>Water supply</option><option>Roads</option><option>Waste management</option><option>Electricity</option><option>Other</option></select>
+<label>Description</label><textarea id="d2" rows="3"></textarea>
+<label>Location</label><select id="l2"></select>
+<p><button class="btn" id="b2" type="button">Submit Complaint</button></p></form>
+<div class="ok" id="ok2"></div></div></div>
+</section>
+
+<section id="map"><h2>Community Map</h2>
+<div class="card"><div class="mapbox"><svg id="svg" viewBox="0 0 600 340" style="width:100%;min-width:480px;height:auto;border-radius:10px;background:var(--ac)">
+<rect x="0" y="150" width="600" height="26" fill="var(--bd)"/><rect x="290" y="0" width="26" height="340" fill="var(--bd)"/>
+<rect x="30" y="30" width="200" height="90" rx="8" fill="#9ed2a8" opacity=".5"/><text x="60" y="80" fill="var(--mu)" font-size="13">Central Park</text>
+<rect x="400" y="210" width="160" height="90" rx="8" fill="#9cc3e8" opacity=".5"/><text x="430" y="260" fill="var(--mu)" font-size="13">Lake</text>
+<text x="20" y="168" fill="var(--mu)" font-size="11">Main Road</text>
+<g id="pins"></g></svg></div>
+<div class="leg"><span><i style="background:#c0392b"></i>Road</span><span><i style="background:#8e6b3e"></i>Garbage</span><span><i style="background:#d98e04"></i>Streetlight</span><span><i style="background:#2563eb"></i>Waterlogging / Drain</span><span><i style="background:#7b4fb5"></i>Other</span></div>
+<p class="mu">Tap a marker to see the issue. Sample map for prototype demonstration.</p><div id="pinInfo" class="alert" style="display:none"></div></div>
+</section>
+
+<section id="complaints"><h2>Complaints</h2>
+<div class="grid g4" style="margin-bottom:14px">
+<div class="card stat"><b id="sTot">0</b><span class="mu">Issues reported</span></div>
+<div class="card stat"><b id="sRes" style="color:var(--grn)">0</b><span class="mu">Resolved</span></div>
+<div class="card stat"><b id="sPro" style="color:var(--amb)">0</b><span class="mu">In progress</span></div></div>
+<div class="grid" id="list"></div>
+</section>
+
+<section><h2>🌱 Sustainability Goals</h2>
+<div class="card"><p class="mu" style="margin-top:0">Smart Community supports SDG 11: Sustainable Cities and Communities, making neighborhoods inclusive, safe and resilient.</p>
+<div class="goals"><span>Cleaner streets</span><span>Better roads</span><span>Safer neighborhoods</span><span>Better waste management</span><span>Faster issue reporting</span><span>Citizen participation</span></div></div>
+</section>
+</main>
+<footer>Smart Community · IDT college prototype · Sustainable Cities and Communities</footer>
+<script>
+var ZONES={"Main Gate":[300,160],"Central Park":[120,70],"Market Lane":[460,70],"Lake Side":[470,250],"Block C":[130,250]};
+var ST=["Submitted","Verified","In Progress","Resolved"];
+var ANN=[["Maintenance","Road resurfacing on Market Lane, Sat 7am–2pm"],["Water","Water supply interrupted Thu 10am–1pm"],["Garbage","Wet waste pickup daily 7am; dry waste on Fridays"],["Meeting","Residents' meeting Sunday 6pm at Community Hall"],["Alert","Heavy rain expected Thursday evening"]];
+var I=[{t:"Pothole near Main Gate",cat:"Pothole / damaged road",z:"Main Gate",s:2,k:"road",d:"2 days ago"},
+{t:"Garbage pile at Market Lane",cat:"Garbage",z:"Market Lane",s:1,k:"garb",d:"1 day ago"},
+{t:"Streetlight not working",cat:"Broken streetlight",z:"Block C",s:3,k:"light",d:"5 days ago"},
+{t:"Waterlogging near Lake Side",cat:"Waterlogging",z:"Lake Side",s:0,k:"water",d:"Today"}];
+var COL={road:"#c0392b",garb:"#8e6b3e",light:"#d98e04",water:"#2563eb",other:"#7b4fb5"};
+function $(i){return document.getElementById(i)}
+function kind(c){c=c.toLowerCase();return /pothole|road/.test(c)?"road":/garbage|waste/.test(c)?"garb":/light|electric/.test(c)?"light":/water|drain/.test(c)?"water":"other"}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function zopts(){var h="";for(var z in ZONES)h+="<option>"+z+"</option>";$("l1").innerHTML=h;$("l2").innerHTML=h}
+function anns(n){return ANN.slice(0,n).map(function(a){return '<div class="ann"><span class="tag">'+a[0]+'</span>'+a[1]+'</div>'}).join("")}
+function render(){
+ $("annHome").innerHTML=anns(3);$("annAll").innerHTML=anns(5);
+ var act=I.filter(function(x){return x.s<3}).length;
+ $("activeN").textContent=act;$("sTot").textContent=I.length;
+ $("sRes").textContent=I.filter(function(x){return x.s==3}).length;
+ $("sPro").textContent=I.filter(function(x){return x.s==1||x.s==2}).length;
+ $("list").innerHTML=I.map(function(x,i){
+  var st=ST.map(function(n,j){return '<span class="'+(j<=x.s?"on":"")+'">'+(j<=x.s?"✓ ":"")+n+'</span>'}).join("");
+  return '<div class="card"><div class="iss"><div><b>'+esc(x.t)+'</b><div class="mu">'+esc(x.cat)+' · 📍 '+x.z+' · '+x.d+'</div></div>'+
+  (x.s<3?'<button class="btn o s" onclick="adv('+i+')">Advance status (demo)</button>':'')+'</div><div class="step">'+st+'</div><div style="margin-top:6px;font-size:14px">Status: <b>'+ST[x.s]+'</b></div></div>'}).join("");
+ var cnt={},p="";
+ I.forEach(function(x,i){var b=ZONES[x.z],n=cnt[x.z]=(cnt[x.z]||0)+1,dx=(n-1)*26,dy=(n-1)*10;
+  p+='<g style="cursor:pointer" onclick="info('+i+')"><circle cx="'+(b[0]+dx)+'" cy="'+(b[1]+dy)+'" r="11" fill="'+COL[x.k]+'" stroke="#fff" stroke-width="2"/><text x="'+(b[0]+dx)+'" y="'+(b[1]+dy+4)+'" text-anchor="middle" font-size="11" fill="#fff">!</text></g>'});
+ $("pins").innerHTML=p;
+}
+function adv(i){if(I[i].s<3){I[i].s++;render()}}
+function info(i){var x=I[i],e=$("pinInfo");e.style.display="block";e.textContent=x.t+" — "+x.z+" — Status: "+ST[x.s]}
+function ok(id,m){var e=$(id);e.style.display="block";e.textContent=m}
+$("b1").onclick=function(){
+ var d=$("d1").value.trim();if(!d){alert("Please describe the problem.");return}
+ var c=$("c1").value;I.unshift({t:c+" – "+d.slice(0,40),cat:c,z:$("l1").value,s:0,k:kind(c),d:"Just now"});
+ $("d1").value="";render();ok("ok1","✅ Report submitted! It now appears under Complaints and on the Map with status: Submitted.")};
+$("b2").onclick=function(){
+ var t=$("t2").value.trim();if(!t){alert("Please enter a complaint title.");return}
+ var c=$("c2").value;I.unshift({t:"[Municipality] "+t,cat:c,z:$("l2").value,s:0,k:kind(c),d:"Just now"});
+ $("t2").value="";$("d2").value="";render();ok("ok2","✅ Complaint sent to the municipality (demo). Track its status under Complaints.")};
+zopts();render();
+</script>
+</body>
+</html>
